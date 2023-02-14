@@ -1,0 +1,100 @@
+###
+POST http://localhost:3000/auth/login
+content-type: application/json
+
+{
+  "emailId" : "admin@gmail.com",
+  "username" : "admin",
+  "password" : "password123"
+}
+
+###
+GET http://localhost:3000/auth/
+
+###
+POST http://localhost:3000/airline
+Content-Type: application/json
+
+{
+  "name" : "DemoAirlines"
+}
+
+###
+POST  http://localhost:3000/flightbooking
+Content-Type:application/json
+
+{
+  "flight_number" : "3",
+  "airline_id" : 3,
+  "from_place" : "Kolkata",
+  "to_place" : "chennai",
+  "start_time" : "9:25", 
+  "end_time" : "13:35",
+  "total_number_of_business_class_seats" : "30",
+  "total_number_of_nonbusiness_class_seats" : "70", 
+  "ticket_cost" : "5300",
+  "total_number_of_seats" : "100",
+  "meal" : "veg" 
+}
+
+###
+
+PUT  http://localhost:3000/airline
+Content-Type:application/json
+
+{
+  "name" : "DemoAirlines",
+  "blocked" : "yes"
+}
+
+###
+
+GET  http://localhost:3000/flightbooking
+Content-Type:application/json
+
+{ 
+"date": "03/02/2023",
+"from_place": "kolkata",
+"to_place": "chennai",
+"round_trip": "yes" 
+}
+
+###
+POST http://localhost:3000/flightbooking/booking
+content-type:application/json
+
+{
+  "flight_id": 3,
+  "booked_by": "demo1",
+  "emailId": "demo1@gmail.com",
+  "number_of_seats": 1,
+  "passengers": 
+  [
+    {
+      "name": "34pnr1",
+      "age": 23,
+      "gender": "male"
+    },
+    {
+      "name": "34pnr2",
+      "age": 22,
+      "gender": "female"
+    }
+  ],
+  "selected_meal": "non-veg", 
+  "selected_seat_number": null
+}
+
+###
+  GET http://localhost:3000/flightbooking/history/ram@gmail.com
+Content-Type:application/json
+
+###
+  GET http://localhost:3000/flightbooking/ticket/2
+Content-Type:application/json
+
+###
+  PUT http://localhost:3000/flightbooking/cancel/1
+Content-Type:application/json
+
+###
